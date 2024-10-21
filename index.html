@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Paint App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="paintContainer">
+        <canvas id="paintCanvas"></canvas>
+        <div class="colorPalette">
+            <input type="color" id="rightColorPicker">
+        </div>
+        <button id="resetButton">Reset</button>
+    </div>
+
+    <div id="resultContainer">
+        <p id="resultText"></p>
+    </div>
+    <div id="colorNotification" class="color-notification"></div>
+
+    <script src="index.js"></script>
+    <script src="colorPicker.js"></script>
+    <div id="colorDisplay" style="margin-top: 20px; font-size: 16px; color: #333;"></div>
+</body>
+</html>

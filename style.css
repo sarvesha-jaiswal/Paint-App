@@ -1,0 +1,157 @@
+/* Body styling for centering the main container */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #7EC8E3, #FDE38B, #bcf2edc0);
+    background-size: 400% 400%;
+    animation: moveBackground 10s ease infinite;
+}
+/* Keyframes for smooth background movement */
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Container styling to center the canvas, button, and palettes */
+#paintContainer {
+    display: flex;
+    flex-direction: row; /* Keep the canvas and palettes in a row */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff; /* White background for canvas container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+
+    max-width: 100%;
+    flex-wrap: wrap; /* Allow wrapping if needed on smaller screens */
+    opacity: 0.9;
+}
+
+/* Wrapper for color palette and reset button */
+#controlContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Color palette styling */
+.colorPalette {
+    margin: 0 10px;
+}
+
+.colorPalette input[type="color"] {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styling for the canvas */
+#paintCanvas {
+    border: 2px solid #333; /* Darker border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
+    max-width: 100%;
+}
+
+/* Styling for the Reset button */
+#resetButton {
+    padding: 10px 20px;
+    background-color: #007BFF; /* Blue background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    margin-left: 15px; /* Space between palette and reset button */
+}
+
+/* Button hover effect */
+#resetButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Result container styling */
+#resultContainer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333; /* Dark gray text */
+}
+
+.color-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Ensure it appears above other content */
+    transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Start invisible */
+}
+
+.color-notification.show {
+    display: block; /* Show the notification */
+    opacity: 1; /* Fade in */
+    bottom: 40px; /* Move up when shown */
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    #paintContainer {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        padding: 10px;
+    }
+
+    #controlContainer {
+        flex-direction: column; /* Stack palette and button on smaller screens */
+        margin-top: 10px;
+    }
+
+    #resetButton {
+        margin-left: 0;
+        width: 100%; /* Full width button on small screens */
+        margin-top: 10px;
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+    .colorPalette input[type="color"] {
+        width: 40px;
+        height: 40px; /* Smaller palette size for very small screens */
+    }
+
+    #paintCanvas {
+        width: 100%; /* Ensure canvas stays responsive */
+    }
+
+    #resetButton {
+        padding: 8px 16px; /* Smaller padding for reset button */
+    }
+
+   
+}
